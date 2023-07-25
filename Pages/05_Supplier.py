@@ -53,7 +53,7 @@ with middle_column:
  st.subheader(f"EU € {total_units:,}")   
 
 dfchart = px.line(df_selection,
-                   x ="Week", y="Supplier",
+                   x ="Week", y="Total SALES €",
                title="<b>Sales by Supplier</b>",
   color_discrete_sequence=["#0085B8"] * len(df_selection),
     template="simple_white",)
