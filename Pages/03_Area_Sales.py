@@ -75,7 +75,7 @@ right_column.dataframe(df_selection, use_container_width=True)
 
 st.markdown("---")
 
-
+st.write(':loudspeaker: From Week 29 *Area Manager Changed!* :heavy_exclamation_mark:')
 
 st.markdown("---")
 
