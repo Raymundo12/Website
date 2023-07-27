@@ -26,8 +26,8 @@ Store2 = st.sidebar.selectbox(
 
 st.markdown("##")
 
-df_selection = df.query("Week == @Week & Stores == @Store & Stores == @Store2")
-
+df_selection = df.query("Week == @Week & Stores == @Store")
+df_selection2 = df.query("Week == @Week & Stores == @Store2")
 
 st.title(":bar_chart: Sales Report by Store 2023")
 st.markdown("##")
@@ -54,25 +54,28 @@ dfchart = px.line(df_selection,
   color_discrete_sequence=["#0085B8"] * len(df_selection),
     template="simple_white",)
 
-dfchart1 = px.bar(df_selection,
+dfchart1 = px.line(df_selection2,
                  x = "Week",
                  y="Sales Report2",
                  title="<b>Sales</b>",
   color_discrete_sequence=["#0085B8"] * len(df_selection),
     template="simple_white",)
 
-
-
 left_column, right_column = st.columns(2)
 left_column.plotly_chart(dfchart, use_container_width=True)
 right_column.plotly_chart(dfchart1, use_container_width=True)
-
 
 ##st.plotly_chart(dfchart)
 ##st.dataframe(df_selection)
 
 st.markdown("---")
 
+st.write(':loudspeaker: From Week 29 *Area Manager Changed!* :heavy_exclamation_mark:')
+
 df_selection
 
 st.markdown("---")
+
+
+
+
