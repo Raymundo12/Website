@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-df = pd.read_excel("CatSalesTotal.xlsx")
+df = pd.read_csv("DFW3.csv")
 df1 = pd.read_csv("DFW1.csv")
 
 print(df1)
@@ -18,7 +18,7 @@ st.sidebar.subheader("Table")
 
 Week = st.sidebar.selectbox(
     "Select the Week:",
-    options=df["Week"].unique())
+    df["Week"].unique())
 
 Store = st.sidebar.multiselect(
  "Select the Store:",
@@ -32,21 +32,21 @@ st.markdown("##")
 
 Week1 = st.sidebar.selectbox(
     "Select the Week:",
-    options=df1["Week"].unique())
+    options=df1["Weeks"].unique())
 
 Quarter1 = st.sidebar.selectbox(
     "Select the Quarter",
-    options=df1["Quarter"].unique())
+    options=df1["Quarters"].unique())
 
 Store1 = st.sidebar.selectbox(
  "Select the Store:",
-  options=df1["STORE_NAME"].unique())
+  options=df1["Stores"].unique())
 
 Cat1 = st.sidebar.multiselect(
  "Select the Category:",
-  options=df1["ItemGroup"].unique())
+  options=df1["Cats"].unique())
 
-df_selection1 = df1.query("Week == @Week1 & Quarter == @Quarter1 & STORE_NAME == @Store1 & ItemGroup == @Cat1")
+df_selection1 = df1.query("Weeks == @Week1 & Quarters == @Quarter1 & Stores == @Store1 & Cats == @Cat1")
 
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
@@ -70,13 +70,13 @@ with middle_column:
  st.subheader(f"EU € {total_units:,}")   
 
 dfchart = px.histogram(df_selection1,
-                   x ="ItemGroup", y="SALES", text_auto=',',
+                   x ="Cats", y="SALES", text_auto=',',
                title="<b>Sales by Categori</b>",
   color_discrete_sequence=["#0085B8"] * len(df_selection1),
     template="simple_white",)
 
 dfchart1 = px.histogram(df_selection1,
-                   x ="ItemGroup", y="UNIT", text_auto=',',
+                   x ="Cats", y="UNIT", text_auto=',',
                title="<b>Total Units by Categori</b>",
   color_discrete_sequence=["#0085B8"] * len(df_selection1),
     template="simple_white",)
