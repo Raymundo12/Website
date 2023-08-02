@@ -30,7 +30,7 @@ st.sidebar.subheader("Chart")
 
 st.markdown("##")
 
-Week1 = st.sidebar.selectbox(
+Week1 = st.sidebar.multiselect(
     "Select the Week:",
     options=df1["Weeks"].unique())
 
@@ -51,7 +51,7 @@ df_selection1 = df1.query("Weeks == @Week1 & Quarters == @Quarter1 & Stores == @
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
 
-df_selection
+##df_selection
 
 st.markdown("---")
 
