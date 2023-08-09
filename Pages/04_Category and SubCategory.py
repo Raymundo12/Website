@@ -67,7 +67,7 @@ with left_column:
 
 with middle_column:
  st.subheader("Total Units:")
- st.subheader(f"EU € {total_units:,}")   
+ st.subheader(f"{total_units:}")   
 
 dfchart = px.histogram(df_selection1,
                    x ="Cats", y="SALES", text_auto=',',
