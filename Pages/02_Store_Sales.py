@@ -57,7 +57,7 @@ dfchart = px.line(df_selection,
 dfchart1 = px.line(df_selection2,
                  x = "Week", y="Sales Report2", text= "Sales Report2", color="STORE PROFILE", markers=True,
                  title="<b>Sales</b>",
-  color_discrete_sequence=["#8E1ADE"] * len(df_selection),
+  color_discrete_sequence=["#fa6e0a"] * len(df_selection),
     template="simple_white",)
 
 left_column, right_column = st.columns(2)

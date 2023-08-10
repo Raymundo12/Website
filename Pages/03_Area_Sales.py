@@ -61,7 +61,7 @@ st.markdown("---")
 dfchart = px.bar(df_selection,
                  x = "Stores", y="Sales Report", text_auto=',',
                  title="<b>Sales by Area</b>", height=600,
-                color_discrete_sequence=["#d7aef3"] * len(df_selection),
+                color_discrete_sequence=["#fa6e0a"] * len(df_selection),
     template="simple_white",)
 dfchart.update_traces(textfont_size=15, textangle=0, textposition="outside", cliponaxis=False)
      

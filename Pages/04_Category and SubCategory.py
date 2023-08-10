@@ -93,13 +93,13 @@ with right_column:
 dfchart = px.histogram(df_selection1,
                    x ="Cats", y="SALES", text_auto=',',
                title="<b>Sales by Category</b>",
-  color_discrete_sequence=["#0085B8"] * len(df_selection1),
+  color_discrete_sequence=["#12A6A6"] * len(df_selection1),
     template="simple_white")
 
 dfchart1 = px.histogram(df_selection1,
                    x ="Sub", y="SALES", text_auto=',',
                title="<b>Total Sales SubCategory</b>", height=600,
-  color_discrete_sequence=["#0085B8"] * len(df_selection1),
+  color_discrete_sequence=["#fa6e0a"] * len(df_selection1),
     template="simple_white",)
 dfchart1.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
 
