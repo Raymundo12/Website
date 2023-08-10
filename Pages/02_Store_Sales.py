@@ -14,7 +14,7 @@ st.sidebar.header('Please select the Week:')
 
 Week = st.sidebar.multiselect(
     "Select the Week:",
-    options=df["Week"].unique())
+    options=df["Week"].unique(),)
 
 Store = st.sidebar.selectbox(
  "Select the Store:",

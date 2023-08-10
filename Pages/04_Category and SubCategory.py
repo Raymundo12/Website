@@ -16,19 +16,28 @@ st.sidebar.header('Please select the the Chart or Table:')
 
 st.sidebar.subheader("Table")
 
-Quarters = st.sidebar.selectbox(
+Quarters = st.sidebar.multiselect(
     "Select the Quarter:",
     df["Quarter"].unique())
+if not Quarters:
+ df3 = df.copy()
+else:
+ df3 = df[df["Quarter"].isin(Quarters)] 
 
-Week = st.sidebar.selectbox(
+
+Weeek = st.sidebar.multiselect(
     "Select the Week:",
-    df["Week"].unique())
+    df3["Week"].unique())
+if not Weeek:
+ df4 = df3.copy()
+else:
+ df4 = df3[df3["Week"].isin(Weeek)]
 
 AStore = st.sidebar.multiselect(
  "Select the Store:",
-  options=df["Store"].unique(),)
+  options=df4["Store"].unique())
 
-df_selection = df.query("Quarter == @Quarters & Week == @Week & Store == @AStore")
+df_selection = df.query("Quarter == @Quarters & Week == @Weeek & Store == @AStore")
 
 st.sidebar.subheader("Chart")
 
