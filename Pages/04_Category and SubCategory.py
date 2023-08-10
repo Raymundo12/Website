@@ -65,7 +65,7 @@ Store1 = st.sidebar.selectbox(
 
 Cat1 = st.sidebar.multiselect(
  "Select the Category:",
-  options=df5["Cats"].unique(),)
+  options=df5["Cats"].unique())
 
 df_selection1 = df1.query("Quarters == @Quarter1 & Weeks == @Week1 & Stores == @Store1 & Cats == @Cat1")
 
@@ -94,7 +94,7 @@ dfchart = px.histogram(df_selection1,
                    x ="Cats", y="SALES", text_auto=',',
                title="<b>Sales by Categori</b>",
   color_discrete_sequence=["#0085B8"] * len(df_selection1),
-    template="simple_white",)
+    template="simple_white")
 
 dfchart1 = px.histogram(df_selection1,
                    x ="Cats", y="UNIT", text_auto=',',

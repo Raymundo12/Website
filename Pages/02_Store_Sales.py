@@ -14,15 +14,15 @@ st.sidebar.header('Please select the Week:')
 
 Week = st.sidebar.multiselect(
     "Select the Week:",
-    options=df["Week"].unique(),)
+    options=df["Week"].unique())
 
 Store = st.sidebar.selectbox(
  "Select the Store:",
-  options=df["Stores"].unique(),)
+  options=df["Stores"].unique())
 
 Store2 = st.sidebar.selectbox(
  "Select the Store to Compare:",
-  options=df["Stores"].unique(),)
+  options=df["Stores"].unique())
 
 st.markdown("##")
 
