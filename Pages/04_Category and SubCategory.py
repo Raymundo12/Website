@@ -43,23 +43,31 @@ st.sidebar.subheader("Chart")
 
 st.markdown("##")
 
-Week1 = st.sidebar.multiselect(
-    "Select the Week:",
-    options=df1["Weeks"].unique())
-
-Quarter1 = st.sidebar.selectbox(
+Quarter1 = st.sidebar.multiselect(
     "Select the Quarter",
     options=df1["Quarters"].unique())
+if not Quarter1:
+ df5 = df1.copy()
+else:
+ df5 = df1[df1["Quarters"].isin(Quarter1)] 
+
+Week1 = st.sidebar.multiselect(
+    "Select the Week:",
+    options=df5["Weeks"].unique())
+if not Week1:
+ df6 = df5.copy()
+else:
+ df5 = df1[df1["Weeks"].isin(Week1)]
 
 Store1 = st.sidebar.selectbox(
  "Select the Store:",
-  options=df1["Stores"].unique())
+  options=df5["Stores"].unique())
 
 Cat1 = st.sidebar.multiselect(
  "Select the Category:",
-  options=df1["Cats"].unique(),)
+  options=df5["Cats"].unique(),)
 
-df_selection1 = df1.query("Weeks == @Week1 & Quarters == @Quarter1 & Stores == @Store1 & Cats == @Cat1")
+df_selection1 = df1.query("Quarters == @Quarter1 & Weeks == @Week1 & Stores == @Store1 & Cats == @Cat1")
 
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
