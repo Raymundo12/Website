@@ -16,15 +16,19 @@ st.sidebar.header('Please select the the Chart or Table:')
 
 st.sidebar.subheader("Table")
 
+Quarters = st.sidebar.selectbox(
+    "Select the Quarter:",
+    df["Quarter"].unique())
+
 Week = st.sidebar.selectbox(
     "Select the Week:",
     df["Week"].unique())
 
-Store = st.sidebar.multiselect(
+AStore = st.sidebar.multiselect(
  "Select the Store:",
   options=df["Store"].unique(),)
 
-df_selection = df.query("Week == @Week & Store == @Store")
+df_selection = df.query("Quarter == @Quarters & Week == @Week & Store == @AStore")
 
 st.sidebar.subheader("Chart")
 
@@ -44,14 +48,14 @@ Store1 = st.sidebar.selectbox(
 
 Cat1 = st.sidebar.multiselect(
  "Select the Category:",
-  options=df1["Cats"].unique())
+  options=df1["Cats"].unique(),)
 
 df_selection1 = df1.query("Weeks == @Week1 & Quarters == @Quarter1 & Stores == @Store1 & Cats == @Cat1")
 
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
 
-##df_selection
+df_selection
 
 st.markdown("---")
 
