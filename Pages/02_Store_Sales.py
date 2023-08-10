@@ -49,16 +49,15 @@ with middle_column:
 st.markdown("---")
 
 dfchart = px.line(df_selection,
-                 x = "Week",
-                 y="Sales Report",
-  color_discrete_sequence=["#0085B8"] * len(df_selection),
+                 x = "Week", y="Sales Report", text="Sales Report", color="STORE PROFILE", markers=True,
+                 title="<b>Sales 2023</b>",
+  color_discrete_sequence=["#12A6A6"] * len(df_selection),
     template="simple_white",)
 
 dfchart1 = px.line(df_selection2,
-                 x = "Week",
-                 y="Sales Report2",
+                 x = "Week", y="Sales Report2", text= "Sales Report2", color="STORE PROFILE", markers=True,
                  title="<b>Sales</b>",
-  color_discrete_sequence=["#0085B8"] * len(df_selection),
+  color_discrete_sequence=["#8E1ADE"] * len(df_selection),
     template="simple_white",)
 
 left_column, right_column = st.columns(2)
@@ -73,6 +72,7 @@ st.markdown("---")
 st.write(':loudspeaker: From Week 29 *Area Manager Changed!* :heavy_exclamation_mark:')
 
 df_selection
+df_selection2
 
 st.markdown("---")
 

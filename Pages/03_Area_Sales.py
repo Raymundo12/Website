@@ -60,22 +60,24 @@ st.markdown("---")
 
 dfchart = px.bar(df_selection,
                  x = "Stores", y="Sales Report", text_auto=',',
-                 title="<b>Sales by Area</b>",
-                color_discrete_sequence=["#0085B8"] * len(df_selection),
+                 title="<b>Sales by Area</b>", height=600,
+                color_discrete_sequence=["#d7aef3"] * len(df_selection),
     template="simple_white",)
+dfchart.update_traces(textfont_size=15, textangle=0, textposition="outside", cliponaxis=False)
      
 
 ##st.plotly_chart(dfchart)
 ##st.dataframe(df_selection)
+st.write(':loudspeaker: From Week 29 *Area Manager Changed!* :heavy_exclamation_mark:')
 
-left_column, right_column = st.columns(2)
-left_column.plotly_chart(dfchart, use_container_width=True)
-right_column.dataframe(df_selection, use_container_width=True)
+st.plotly_chart(dfchart, use_container_width=True)
+
 
 
 st.markdown("---")
 
 st.write(':loudspeaker: From Week 29 *Area Manager Changed!* :heavy_exclamation_mark:')
+df_selection
 
 st.markdown("---")
 

@@ -63,7 +63,7 @@ Store1 = st.sidebar.selectbox(
  "Select the Store:",
   options=df5["Stores"].unique())
 
-Cat1 = st.sidebar.multiselect(
+Cat1 = st.sidebar.selectbox(
  "Select the Category:",
   options=df5["Cats"].unique())
 
@@ -83,28 +83,29 @@ total_units = int(df_selection1["UNIT"].sum())
 left_column, middle_column, right_column = st.columns(3)
 
 with left_column:
- st.subheader("Total Sales:")
+ st.subheader("Total Sales by Selected Category:")
  st.subheader(f"EU € {total_sales:,}")   
 
-with middle_column:
- st.subheader("Total Units:")
+with right_column:
+ st.subheader("Total Units by Selected Category:")
  st.subheader(f"{total_units:}")   
 
 dfchart = px.histogram(df_selection1,
                    x ="Cats", y="SALES", text_auto=',',
-               title="<b>Sales by Categori</b>",
+               title="<b>Sales by Category</b>",
   color_discrete_sequence=["#0085B8"] * len(df_selection1),
     template="simple_white")
 
 dfchart1 = px.histogram(df_selection1,
-                   x ="Cats", y="UNIT", text_auto=',',
-               title="<b>Total Units by Categori</b>",
+                   x ="Sub", y="SALES", text_auto=',',
+               title="<b>Total Sales SubCategory</b>", height=600,
   color_discrete_sequence=["#0085B8"] * len(df_selection1),
     template="simple_white",)
+dfchart1.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False)
 
 left_column, right_column = st.columns(2)
-left_column.plotly_chart(dfchart, use_container_width=True)
-right_column.plotly_chart(dfchart1, use_container_width=True)
+
+st.plotly_chart(dfchart1, use_container_width=True)
 
 
 st.markdown("---")
