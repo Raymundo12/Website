@@ -20,7 +20,7 @@ Week = st.sidebar.multiselect(
     options=df["Week"].unique())
 
 
-Supplier = st.sidebar.selectbox(
+Supplier = st.sidebar.multiselect(
  "Select the Store:",
   options=df["Supplier"].unique(),)
 
