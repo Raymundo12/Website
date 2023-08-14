@@ -12,10 +12,3 @@ st.set_page_config(page_title="HS Sales HUB 2023",
 
 st.title('Welcome to :green[HS Sales HUB]')
 
-email=st.text_input('Email Address')
-password=st.text_input('Password', type='password')
-
-
-
-
-st.button('Login')
