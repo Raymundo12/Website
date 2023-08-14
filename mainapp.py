@@ -10,5 +10,7 @@ st.set_page_config(page_title="HS Sales HUB 2023",
                    page_icon="bar_chart:",
                    layout="wide")
 
+##def app():
+
 st.title('Welcome to :green[HS Sales HUB]')
 
