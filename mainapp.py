@@ -7,7 +7,7 @@ st.set_page_config(page_title="HS Sales HUB 2023",
 
 st.title('Welcome to :green[HS Sales HUB]')
 
-df = pd.read_excel("dfstoreTotal1.xlsx")
+df = pd.read_csv("dfstoreTotal.csv")
 
 st.markdown("##")
 
