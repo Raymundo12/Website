@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_multipage import MultiPage  
 
 def intro():
     import streamlit as st
