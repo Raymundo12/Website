@@ -173,9 +173,9 @@ else:
 
 AStore = st.sidebar.multiselect(
  "Select the Store:",
-  options=df4["Store"].unique())
+  options=df4["Stores"].unique())
 
-df_selection = df.query("Quarters == @Quarters & Weeks == @Weeek & Store == @AStore")
+df_selection = df1.query("Quarters == @Quarters & Weeks == @Weeek & Store == @AStore")
 
 st.sidebar.subheader("Chart")
 
