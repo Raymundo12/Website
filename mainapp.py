@@ -150,7 +150,7 @@ st.markdown("---")
 
 st.markdown("##")
 
-st.sidebar.header('Please select the the Chart or Table:')
+st.sidebar.header(' Sales by Category:')
 
 st.sidebar.subheader("Table")
 
@@ -210,7 +210,7 @@ df_selection1 = df1.query("Quarters == @Quarter1 & Weeks == @Week1 & Stores == @
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
 
-df_selection
+df_selection, use_container_width=True
 
 st.markdown("---")
 
