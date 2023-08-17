@@ -284,7 +284,9 @@ st.markdown("---")
 
 total_sales = int(df_selection20["Total SALES €"].sum())
 total_units = int(df_selection20["Total Units"].sum())
-##Top_5 = str(df_selection.groupby(by=["Store"]).sum()[["Sales Report"]].sort_values(by="Sales Report").head(3))
+Top_5 = str(df_selection20.groupby(by=["Supplier"]).sum()[["Total SALES €"]].sort_values(by="Total SALES €").head(3))
+
+print(Top_5)
 
 left_column, middle_column, right_column = st.columns(3)
 
