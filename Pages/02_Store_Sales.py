@@ -49,10 +49,10 @@ with middle_column:
 st.markdown("---")
 
 dfchart = px.line(df_selection,
-                 x = "Week", y="Sales Report", text="Sales Report", color="STORE PROFILE", markers=True,
-                 title="<b>Sales 2023</b>",
-  color_discrete_sequence=["#12A6A6"] * len(df_selection),
-    template="simple_white",)
+x = "Week", y="Sales Report", text="Sales Report", color="STORE PROFILE", markers=True,
+title="<b>Sales 2023</b>",
+color_discrete_sequence=["#12A6A6"] * len(df_selection),
+template="simple_white",)
 
 dfchart1 = px.line(df_selection2,
                  x = "Week", y="Sales Report2", text= "Sales Report2", color="STORE PROFILE", markers=True,
