@@ -156,11 +156,11 @@ st.sidebar.subheader("Table")
 
 Quarters = st.sidebar.multiselect(
     "Select the Quarter:",
-    df["Quarters"].unique())
+    df1["Quarters"].unique())
 if not Quarters:
- df3 = df.copy()
+ df3 = df1.copy()
 else:
- df3 = df[df["Quarters"].isin(Quarters)] 
+ df3 = df1[df1["Quarters"].isin(Quarters)] 
 
 
 Weeek = st.sidebar.multiselect(
