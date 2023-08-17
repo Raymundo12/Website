@@ -80,7 +80,7 @@ df_selection2
 st.markdown("---")
 
 
-st.sidebar.header('Welcome to the Sales Report by Area:')
+st.sidebar.header('Sales Report by Area:')
 
 
 Week = st.sidebar.selectbox(
