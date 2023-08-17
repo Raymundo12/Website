@@ -11,7 +11,7 @@ st.title('Welcome to :green[HS Sales HUB]')
 
 df = pd.read_pickle("dfstoreTotal1.pkl")
 df1 = pd.read_pickle("DFW1.pkl")
-df20 = pd.read_excel("SalesSuppier.pkl")
+df20 = pd.read_pickle("SalesSuppier.pkl")
 
 st.markdown("##")
 
