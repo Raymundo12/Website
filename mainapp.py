@@ -274,7 +274,7 @@ st.sidebar.subheader("Chart")
 
 st.markdown("##")
 
-st.title(":bar_chart: Sales Report by Category 2023")
+st.title(":bar_chart: Sales Report by Supplier 2023")
 st.markdown("##")
 
 df_selection20
@@ -294,7 +294,7 @@ with left_column:
 
 with middle_column:
  st.subheader("Total Units:")
- st.subheader(f"EU € {total_units:,}")   
+ st.subheader(f" {total_units:,}")   
 
 dfchart = px.line(df_selection20,
                    x ="Week", y="Total SALES €", text="Total SALES €",
