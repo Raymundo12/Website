@@ -296,7 +296,7 @@ with middle_column:
  st.subheader("Total Units:")
  st.subheader(f" {total_units:,}")   
 
-with left_column:
+with right_column:
  st.subheader("Total Sales:")
  st.subheader(f"EU € {Top_5:,}")   
 
