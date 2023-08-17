@@ -148,9 +148,6 @@ df_selection
 
 st.markdown("---")
 
-df1 = pd.read_csv("DFW1.csv")
-
-print(df1)
 st.markdown("##")
 
 st.sidebar.header('Please select the the Chart or Table:')
