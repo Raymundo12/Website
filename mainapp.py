@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+
 st.set_page_config(page_title="HS Sales HUB 2023",
                    page_icon="bar_chart:",
                    layout="wide")
@@ -210,7 +211,7 @@ df_selection1 = df1.query("Quarters == @Quarter1 & Weeks == @Week1 & Stores == @
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
 
-df_selection, use_container_width=True
+df_selection
 
 st.markdown("---")
 
