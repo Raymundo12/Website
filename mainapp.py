@@ -286,8 +286,6 @@ total_sales = int(df_selection20["Total SALES €"].sum())
 total_units = int(df_selection20["Total Units"].sum())
 Top_5 = str(df_selection20.groupby(by=["Supplier"]).sum()[["Total SALES €"]].sort_values(by="Total SALES €").head(3))
 
-print(Top_5)
-
 left_column, middle_column, right_column = st.columns(3)
 
 with left_column:
@@ -297,6 +295,10 @@ with left_column:
 with middle_column:
  st.subheader("Total Units:")
  st.subheader(f" {total_units:,}")   
+
+with left_column:
+ st.subheader("Total Sales:")
+ st.subheader(f"EU € {Top_5:,}")   
 
 dfchart = px.line(df_selection20,
                    x ="Week", y="Total SALES €", text="Total SALES €",
