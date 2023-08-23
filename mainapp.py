@@ -207,7 +207,7 @@ Cat1 = st.sidebar.selectbox(
  "Select the Category:",
   options=df5["CATEGORY"].unique())
 
-df_selection1 = df1.query("Quarter == @Quarter1 & Week == @Week1 & Stores == @Store1 & Cats == @Cat1")
+df_selection1 = df1.query("Quarter == @Quarter1 & Week == @Week1 & Stores == @Store1 & CATEGORY == @Cat1")
 
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
