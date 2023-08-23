@@ -231,13 +231,13 @@ with right_column:
  st.subheader(f"{total_units:}")   
 
 dfchart = px.histogram(df_selection1,
-                   x ="Cats", y="SALES", text_auto=',',
+                   x ="CATEGORY", y="SALES", text_auto=',',
                title="<b>Sales by Category</b>",
   color_discrete_sequence=["#12A6A6"] * len(df_selection1),
     template="simple_white")
 
 dfchart1 = px.histogram(df_selection1,
-                   x ="Sub", y="SALES", text_auto=',',
+                   x ="SUB  - CATEGORY", y="SALES", text_auto=',',
                title="<b>Total Sales SubCategory</b>", height=600,
   color_discrete_sequence=["#fa6e0a"] * len(df_selection1),
     template="simple_white",)
