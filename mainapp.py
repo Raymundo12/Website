@@ -183,7 +183,7 @@ st.sidebar.subheader("Chart")
 
 st.markdown("##")
 
-Quarter1 = st.sidebar.multiselect(
+Quarter1 = st.sidebar.selectbox(
     "Select the Quarter",
     options=df1["Quarter"].unique())
 if not Quarter1:
