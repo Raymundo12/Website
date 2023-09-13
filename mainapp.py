@@ -187,25 +187,25 @@ Quarter1 = st.sidebar.multiselect(
     "Select the Quarter",
     options=df1["Quarter"].unique())
 if not Quarter1:
- df5 = df1.copy()
+ df11 = df1.copy()
 else:
- df5 = df1[df1["Quarter"].isin(Quarter1)] 
+ df11 = df1[df1["Quarter"].isin(Quarter1)] 
 
 Week1 = st.sidebar.multiselect(
     "Select the Week:",
-    options=df5["Week"].unique())
+    options=df11["Week"].unique())
 if not Week1:
- df6 = df5.copy()
+ df6 = df11.copy()
 else:
  df5 = df1[df1["Week"].isin(Week1)]
 
 Store1 = st.sidebar.selectbox(
  "Select the Store:",
-  options=df5["Stores"].unique())
+  options=df11["Stores"].unique())
 
 Cat1 = st.sidebar.selectbox(
  "Select the Category:",
-  options=df5["CATEGORY"].unique())
+  options=df11["CATEGORY"].unique())
 
 df_selection1 = df1.query("Quarter == @Quarter1 & Week == @Week1 & Stores == @Store1 & CATEGORY == @Cat1")
 
