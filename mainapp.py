@@ -10,7 +10,7 @@ st.set_page_config(page_title="HS Sales HUB 2023",
 st.title('Welcome to :green[HS Sales HUB]')
 
 df = pd.read_parquet("dfstoreTotal1")
-df1 = pd.read_parquet("DFW1")
+df1 = pd.read_parquet("SubGroupWeekly")
 df20 = pd.read_pickle("SalesSuppier.pkl")
 
 st.markdown("##")
@@ -152,7 +152,7 @@ st.markdown("---")
 
 st.markdown("##")
 
-st.sidebar.header(' Sales by Category:')
+st.sidebar.header('Sales by Category:')
 
 st.sidebar.subheader("Table")
 
