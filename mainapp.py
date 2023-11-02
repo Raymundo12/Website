@@ -158,11 +158,11 @@ st.sidebar.subheader("Table")
 
 Quarters = st.sidebar.multiselect(
     "Select the Quarter:",
-    df1["Quarter"].unique())
+    df["Quarter"].unique())
 if not Quarters:
- df3 = df1.copy()
+ df3 = df.copy()
 else:
- df3 = df1[df1["Quarter"].isin(Quarters)] 
+ df3 = df[df["Quarter"].isin(Quarters)] 
 
 
 Weeek = st.sidebar.multiselect(
@@ -177,7 +177,7 @@ AStore = st.sidebar.multiselect(
  "Select the Store:",
   options=df4["Stores"].unique())
 
-df_selection = df1.query("Quarter == @Quarters & Week == @Weeek & Stores == @AStore")
+df_selection = df.query("Quarter == @Quarters & Week == @Weeek & Stores == @AStore")
 
 st.sidebar.subheader("Chart")
 
@@ -185,11 +185,11 @@ st.markdown("##")
 
 Quarter1 = st.sidebar.multiselect(
     "Select the Quarter",
-    options=df1["Quarter"].unique())
+    options=df["Quarter"].unique())
 if not Quarter1:
- df11 = df1.copy()
+ df11 = df.copy()
 else:
- df11 = df1[df1["Quarter"].isin(Quarter1)] 
+ df11 = df[df["Quarter"].isin(Quarter1)] 
 
 Week1 = st.sidebar.multiselect(
     "Select the Week:",
@@ -197,7 +197,7 @@ Week1 = st.sidebar.multiselect(
 if not Week1:
  df6 = df11.copy()
 else:
- df5 = df1[df1["Week"].isin(Week1)]
+ df5 = df[df["Week"].isin(Week1)]
 
 Store1 = st.sidebar.selectbox(
  "Select the Store:",
@@ -207,7 +207,7 @@ Cat1 = st.sidebar.selectbox(
  "Select the Category:",
   options=df11["CATEGORY"].unique())
 
-df_selection1 = df1.query("Quarter == @Quarter1 & Week == @Week1 & Stores == @Store1 & CATEGORY == @Cat1")
+df_selection1 = df.query("Quarter == @Quarter1 & Week == @Week1 & Stores == @Store1 & CATEGORY == @Cat1")
 
 st.title(":bar_chart: Sales Report by Category 2023")
 st.markdown("##")
