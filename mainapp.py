@@ -38,8 +38,8 @@ df_selection2 = df.query("Week == @Week & Stores == @Store2")
 st.title(":bar_chart: Sales Report by Store 2023")
 st.markdown("##")
 
-total_sales = int(df_selection["Sales Report"])
-total_units = int(df_selection["LY"])
+total_sales = int(df_selection["Sales Report"].sum())
+total_units = int(df_selection["LY"].sum())
 Top_5 = str(df_selection.groupby(by=["Stores"]).sum()[["Sales Report"]].sort_values(by="Sales Report").head(3))
 
 left_column, middle_column, right_column = st.columns(3)
