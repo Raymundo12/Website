@@ -10,7 +10,7 @@ st.set_page_config(page_title="HS Sales HUB 2023",
 st.title('Welcome to :green[HS Sales HUB]')
 
 df = pd.read_parquet("dfstoreTotal1")
-##df1 = pd.read_parquet("SubGroupWeekly")
+df55 = pd.read_parquet("data_for_site")
 df20 = pd.read_pickle("SalesSuppier.pkl")
 
 st.markdown("##")
@@ -158,11 +158,11 @@ st.sidebar.subheader("Table")
 
 Quarters = st.sidebar.multiselect(
     "Select the Quarter:",
-    df["Quarter"].unique())
+    df55["Quarter"].unique())
 if not Quarters:
  df3 = df.copy()
 else:
- df3 = df[df["Quarter"].isin(Quarters)] 
+ df3 = df55[df55["Quarter"].isin(Quarters)] 
 
 
 Weeek = st.sidebar.multiselect(
@@ -177,7 +177,7 @@ AStore = st.sidebar.multiselect(
  "Select the Store:",
   options=df4["Stores"].unique())
 
-df_selection = df.query("Quarter == @Quarters & Week == @Weeek & Stores == @AStore")
+df_selection = df55.query("Quarter == @Quarters & Week == @Weeek & STORE NAME == @AStore")
 
 st.sidebar.subheader("Chart")
 
